@@ -22,7 +22,7 @@
             <div class="col-lg-6 text-center text-lg-left">
                 <h4 class="text-white mb-4 mt-5 mt-lg-0">{{ banner.header_subtitle }}</h4>
                 <h1 class="display-3 font-weight-bold text-white">{{ banner.header_title }}</h1>
-                <p class="text-white mb-4">{{ banner.header_description | slice:":550"|safe  }}.</p>
+                <p class="text-white mb-4">{{ banner.header_description | slice:":550"|safe  }}...</p>
                 <a href="{% url 'about' %}" class="btn btn-secondary mt-1 py-3 px-5">Batafsil...</a>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
@@ -36,14 +36,17 @@
     <!-- Facilities Start -->
     <div class="container-fluid pt-5">
         <div class="container pb-3">
-            qo'shimcha qulayliklar
+            <div class="text-lg-center" style="font-size:30px">
+                Bizda mavjud qo'shimcha qulayliklar
+            </div>
+            <br>
             <div class="row">
                 <div class="col-lg-4 col-md-6 pb-1">
                     <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
                         <i class="flaticon-050-fence h1 font-weight-normal text-primary mb-3"></i>
                         <div class="pl-4">
                             <h4>O'yin maydonchasi</h4>
-                            <p class="m-0">Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...</p>
+                            <p class="m-0">Bolalar uchun mo'ljallangan, zamonaviy barcha talablarga javob beradigan qurilmalar bilan jihozlangan...</p>
                         </div>
                     </div>
                 </div>
@@ -52,7 +55,7 @@
                         <i class="flaticon-022-drum h1 font-weight-normal text-primary mb-3"></i>
                         <div class="pl-4">
                             <h4>Musiqa va raqs</h4>
-                            <p class="m-0">Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...</p>
+                            <p class="m-0">Bizda mashg'ulotlar davomida turli qo'shiqlarni musiqa asboblari bilan birgalikda kuylashi mumkin...</p>
                         </div>
                     </div>
                 </div>
@@ -61,7 +64,7 @@
                         <i class="flaticon-030-crayons h1 font-weight-normal text-primary mb-3"></i>
                         <div class="pl-4">
                             <h4>San'at va hunarmandchilik</h4>
-                            <p class="m-0">Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...</p>
+                            <p class="m-0">Bolajonlar o'zlari yoqtirgan haykalchalarni yasashi, rasmlar chizishi mumkin...</p>
                         </div>
                     </div>
                 </div>
@@ -70,7 +73,7 @@
                         <i class="flaticon-017-toy-car h1 font-weight-normal text-primary mb-3"></i>
                         <div class="pl-4">
                             <h4>Xavfsiz olib kelish va olib borish</h4>
-                            <p class="m-0">Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...</p>
+                            <p class="m-0">Biz farzandingizni xavfsiz olib ketib mashg'ulotlardan so'ng xavfsiz olib borib qo'yamiz...</p>
                         </div>
                     </div>
                 </div>
@@ -79,7 +82,7 @@
                         <i class="flaticon-025-sandwich h1 font-weight-normal text-primary mb-3"></i>
                         <div class="pl-4">
                             <h4>Sog'lom taomnoma</h4>
-                            <p class="m-0">Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...</p>
+                            <p class="m-0">Har kuni bolalar ozganizmi uchun foydali bo'lgan oziqaviy taomnomani taklif etamiz...</p>
                         </div>
                     </div>
                 </div>
@@ -88,7 +91,7 @@
                         <i class="flaticon-047-backpack h1 font-weight-normal text-primary mb-3"></i>
                         <div class="pl-4">
                             <h4>Ta'lim sarguzashtlari</h4>
-                            <p class="m-0">Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...</p>
+                            <p class="m-0">Har hafta yoki har oyda bolajonlar qiziqishlariga qarab sarguzashlarga chiqamiz...</p>
                         </div>
                     </div>
                 </div>
@@ -103,7 +106,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5">
-                    <img class="img-fluid rounded mb-5 mb-lg-0" src="{% static 'img/about_main_XL1.jpg' %}" alt="">
+                    <img class="img-fluid rounded mb-5 mb-lg-0" src="{% static 'img/about.jpg' %}" alt="">
                 </div>
                 <div class="col-lg-7">
                     <p class="section-title pr-5"><span class="pr-2">Biz haqimizda bilib oling</span></p>
@@ -115,9 +118,9 @@
                         </div>
                         <div class="col-6 col-md-8">
                             <ul class="list-inline m-0">
-                                <li class="py-2 border-top border-bottom"><i class="fa fa-check text-primary mr-3"></i>Labore eos amet dolor amet diam</li>
-                                <li class="py-2 border-bottom"><i class="fa fa-check text-primary mr-3"></i>Etsea et sit dolor amet ipsum</li>
-                                <li class="py-2 border-bottom"><i class="fa fa-check text-primary mr-3"></i>Diam dolor diam elitripsum vero.</li>
+                                <li class="py-2 border-top border-bottom"><i class="fa fa-check text-primary mr-3"></i>Doimiy nazorat ostida </li>
+                                <li class="py-2 border-bottom"><i class="fa fa-check text-primary mr-3"></i>Mustaqil qaror qabul qilish</li>
+                                <li class="py-2 border-bottom"><i class="fa fa-check text-primary mr-3"></i>Doimo muloqotda bo'lish</li>
                             </ul>
                         </div>
                     </div>
@@ -135,7 +138,7 @@
         <div class="container">
             <div class="text-center pb-2">
                 <p class="section-title px-5"><span class="px-2">Bizning tarbiyachilarimiz</span></p>
-                <h1 class="mb-4">Murabbiylar bilan tanishing</h1>
+                <h1 class="mb-4">Faol tarbiyachilarimiz bilan tanishing</h1>
             </div>
             <div class="row">
                 {% for teacher in teachers %}
@@ -215,10 +218,10 @@
                         </a>
 
                             <div class="d-flex justify-content-center mb-3 ">
-                                <small class="mr-3"><i class="far fa-calendar-alt"></i> {{ article.date }}</small>
-                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Category</small>
+                                <small class="mr-3"><i class="far fa-calendar-alt"></i>  {{ article.date }}</small>
+                                <small class="mr-3"><i class="fa fa-folder text-primary"></i>  {{ article.categoryID }}</small>
                             </div>
-                            <p class="ml-5"> {{article.subtitle|safe }} </p>
+                            <p class="ml-5"> {{article.subtitle|safe | slice:":200"}}... </p>
                             <a href="{% url 'article_detail' article.pk %}" class="btn btn-primary px-4 mx-auto my-2">Batafsil...</a>
                         </div>
                     </div>

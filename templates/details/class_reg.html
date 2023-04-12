@@ -16,7 +16,7 @@
                         <img class="card-img-top mb-2" src="{{ class.photo.url }}" alt="{{ class.name }}">
                         <div class="card-body text-center">
                             <h4 class="card-title">{{ class.name }}</h4>
-                            <p class="card-text">{{ class.description }}</p>
+                            <p class="card-text">{{ class.description|safe }}</p>
                         </div>
                         <div class="card-footer bg-transparent py-4 px-5">
                             <div class="row border-bottom">

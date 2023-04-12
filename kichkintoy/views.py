@@ -97,8 +97,10 @@ def classes(request):
 def team(request):
     teachers = Teacher.objects.all()
     contacts = Contacts.objects.all()[0]
+    izohlar = Testimonial.objects.all()
     context = {
         'teachers': teachers,
+        'izohlar': izohlar,
         'contacts': contacts,
     }
 

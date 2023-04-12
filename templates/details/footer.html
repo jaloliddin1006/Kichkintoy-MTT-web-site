@@ -1,0 +1,83 @@
+{% load static %}
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
+        <div class="row pt-5">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <a href="" class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0" style="font-size: 40px; line-height: 40px;">
+                    <i class="flaticon-043-teddy-bear"></i>
+                    <span class="text-white">Kichkintoy</span>
+                </a>
+                <p>{{ contacts.mini_description|safe }}</p>
+                <div class="d-flex justify-content-start mt-4">
+                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                        style="width: 38px; height: 38px;" href="#"><i class="fab fa-telegram-plane"></i></a>
+                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                        style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook"></i></a>
+                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                        style="width: 38px; height: 38px;" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h3 class="text-primary mb-4">Bog'lanish</h3>
+                <div class="d-flex">
+                    <h4 class="fa fa-map-marker text-primary"></h4>
+                    <div class="pl-3">
+                        <h5 class="text-white">Manzil</h5>
+                        <p>{{ contacts.address }}</p>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <h4 class="fa fa-envelope text-primary"></h4>
+                    <div class="pl-3">
+                        <h5 class="text-white">Elektron pochta</h5>
+                        <p>{{ contacts.email }}</p>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <h4 class="fa fa-phone text-primary"></h4>
+                    <div class="pl-3">
+                        <h5 class="text-white">Telefon raqam</h5>
+                        <p>{{ contacts.phone_1 }}</p>
+                        <p>{{ contacts.phone_2 }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h3 class="text-primary mb-4">Tezkor havolalar</h3>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-white mb-2" href="{% url 'home' %}"><i class="fa fa-angle-right mr-2"></i>Asosiy</a>
+                    <a class="text-white mb-2" href="{% url 'about' %}"><i class="fa fa-angle-right mr-2"></i>Biz haqimizda</a>
+                    <a class="text-white mb-2" href="{% url 'class' %}"><i class="fa fa-angle-right mr-2"></i>Guruhlar</a>
+                    <a class="text-white mb-2" href="{% url 'team' %}"><i class="fa fa-angle-right mr-2"></i>Murabbiylar</a>
+                    <a class="text-white mb-2" href="{% url 'article' %}"><i class="fa fa-angle-right mr-2"></i>Yangiliklar</a>
+                    <a class="text-white" href="{% url 'contact' %}"><i class="fa fa-angle-right mr-2"></i>Aloqa</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h3 class="text-primary mb-4">Ma'lumot olish</h3>
+                <form method="POST">{% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" class="form-control border-0 py-4" placeholder="Ismingiz" required="required" name="name" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control border-0 py-4" placeholder="Telefon raqamingiz"
+                            required="required" name="phone" />
+                    </div>
+                    <div>
+                        <button class="btn btn-primary btn-block border-0 py-3" type="submit">Yuborish</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, .2);;">
+            <p class="m-0 text-center text-white">
+                &copy; <a class="text-primary font-weight-bold" href="{% url 'home' %}">Kichkintoy</a>. All Rights Reserved. 
+				
+				<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+				Developer:  <a class="text-primary font-weight-bold" href="https://t.me/Jaloliddin_Mamatmusayev">Jaloliddin</a>
+            </p>
+        </div>
+    </div>
+    <!-- Footer End -->

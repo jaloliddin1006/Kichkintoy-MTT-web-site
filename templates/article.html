@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block activ_title %}
+<a href="{% url 'home' %}" class="nav-item nav-link ">Asosiy</a>
+<a href="{% url 'about' %}" class="nav-item nav-link ">Biz haqimizda</a>
+<a href="{% url 'class' %}" class="nav-item nav-link ">Guruhlar</a>
+<a href="{% url 'team' %}" class="nav-item nav-link ">Bizning jamoa</a>
+<a href="{% url 'galery' %}" class="nav-item nav-link ">Rasmlar</a>
+<a href="{% url 'article' %}" class="nav-item nav-link active" >Yangiliklar</a>
+<a href="{% url 'contact' %}" class="nav-item nav-link">Aloqa</a>
+{% endblock activ_title %}
+
+{% block content %}
+
+ 
+
+    <!-- Blog Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="text-center pb-2">
+                {% comment %} <p class="section-title px-5"><span class="px-2">Latest Blog</span></p> {% endcomment %}
+                <h1 class="mb-4">Kichkintoy yangiliklari</h1>
+            </div>
+            <div class="row pb-3">
+
+                {% for article in articles %}
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm mb-2">
+                        <a href="{% url 'article_detail' article.pk %}">
+                            <img class="card-img-top mb-2" src="{{ article.photo.url }}" alt="{{ article.title }}">
+                        <div class="card-body bg-light text-center p-4">
+                            <h4 class="">{{ article.title }}</h4>
+                        </a>
+                        <div class="d-flex justify-content-center mb-3">
+                                <small class="mr-3"><i class="far fa-calendar-alt"></i> {{ article.date }}</small>
+                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> {{ article.category }}</small>
+                            </div>
+                            <p> {{article.subtitle }}... </p>
+                            <a href="{% url 'article_detail' article.pk %}" class="btn btn-primary px-4 mx-auto my-2">Batafsil...</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+    {% endblock content %}

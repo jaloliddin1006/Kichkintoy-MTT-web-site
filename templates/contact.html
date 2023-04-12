@@ -1,0 +1,107 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block activ_title %}
+<a href="{% url 'home' %}" class="nav-item nav-link ">Asosiy</a>
+<a href="{% url 'about' %}" class="nav-item nav-link ">Biz haqimizda</a>
+<a href="{% url 'class' %}" class="nav-item nav-link ">Guruhlar</a>
+<a href="{% url 'team' %}" class="nav-item nav-link ">Bizning jamoa</a>
+<a href="{% url 'galery' %}" class="nav-item nav-link ">Rasmlar</a>
+<a href="{% url 'article' %}" class="nav-item nav-link " >Yangiliklar</a>
+
+<a href="{% url 'contact' %}" class="nav-item nav-link active">Aloqa</a>
+{% endblock activ_title %}
+
+{% block content %}
+<div class="text-center pb-2">
+
+{% if messages %}
+{% for message in messages %}
+    <div class="alert alert-success" id="showmessages">{{ message }}</div>
+{% endfor %}
+{% endif %}
+</div>
+
+    <!-- Contact Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="text-center pb-2">
+                <p class="section-title px-5"><span class="px-2">Get In Touch</span></p>
+                <h1 class="mb-4">Biror savol yoki taklifingiz bo'lsa marhamat!</h1>
+              
+            </div>
+            <div class="row">
+                <div class="col-lg-7 mb-5">
+                    <div class="contact-form">
+                        <div id="success"></div>
+                        <form  method="post">{% csrf_token %}
+                            <div class="control-group">
+                                <input type="text" class="form-control" id="name" placeholder="Ismingiz" required="required" data-validation-required-message="Iltimos ismingizni kiriting" name="name" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="email" class="form-control" id="email" placeholder="Elektron pochtngiz" required="required" data-validation-required-message="Email to'g'ri yozilishi shart" name="email" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control" id="subject" placeholder="Mavzu" required="required" name="subject"/>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <textarea class="form-control" rows="6" id="message" placeholder="Xabaringizni yozing" required="required" data-validation-required-message="Xabaringizni kiriting" name="message"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary py-2 px-4" type="submit" >Xabarni yuborish</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5 mb-5">
+                    <p>{{ contacts.mini_description|safe }}</p>
+                    <div class="d-flex">
+                        <i class="fa fa-map-marker d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle" style="width: 45px; height: 45px;"></i>
+                        <div class="pl-3">
+                            <h5>Manzil</h5>
+                            <p>{{ contacts.address }}</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <i class="fa fa-envelope d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle" style="width: 45px; height: 45px;"></i>
+                        <div class="pl-3">
+                            <h5>Elektron pochta</h5>
+                            <p>{{ contacts.email }}</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <i class="fa fa-phone d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle" style="width: 45px; height: 45px;"></i>
+                        <div class="pl-3">
+                            <h5>Telefon raqam</h5>
+                            <p>{{ contacts.phone_1 }}<br>{{ contacts.phone_2 }}</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <i class="far fa-clock d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle" style="width: 45px; height: 45px;"></i>
+                        <div class="pl-3">
+                            <h5>Ish vaqti</h5>
+                                <strong>{{ contacts.work_days }}</strong>
+                            <p class="m-0">{{ contacts.work_time }} </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+    <script>
+        window.setTimeout(function() {
+            var messages = document.getElementById("showmessages");
+            if (messages) {
+              messages.style.display = "none";
+            }
+          }, 3000);
+      </script>
+
+    {% endblock content %}

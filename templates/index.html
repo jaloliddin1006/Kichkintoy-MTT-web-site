@@ -1,0 +1,235 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block activ_title %}
+<a href="{% url 'home' %}" class="nav-item nav-link active">Asosiy</a>
+<a href="{% url 'about' %}" class="nav-item nav-link ">Biz haqimizda</a>
+<a href="{% url 'class' %}" class="nav-item nav-link ">Guruhlar</a>
+<a href="{% url 'team' %}" class="nav-item nav-link ">Bizning jamoa</a>
+<a href="{% url 'galery' %}" class="nav-item nav-link ">Rasmlar</a>
+<a href="{% url 'article' %}" class="nav-item nav-link " >Yangiliklar</a>
+
+<a href="{% url 'contact' %}" class="nav-item nav-link">Aloqa</a>
+{% endblock activ_title %}
+
+{% block content %}
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
+        <div class="row align-items-center px-3">
+            <div class="col-lg-6 text-center text-lg-left">
+                <h4 class="text-white mb-4 mt-5 mt-lg-0">{{ banner.header_subtitle }}</h4>
+                <h1 class="display-3 font-weight-bold text-white">{{ banner.header_title }}</h1>
+                <p class="text-white mb-4">{{ banner.header_description | slice:":550"|safe  }}.</p>
+                <a href="{% url 'about' %}" class="btn btn-secondary mt-1 py-3 px-5">Batafsil...</a>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                <img class="img-fluid mt-5 mb-5" src="{{ banner.header_photo.url }}" alt="{{ banner.header_title }}" style="width:90% ">
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- Facilities Start -->
+    <div class="container-fluid pt-5">
+        <div class="container pb-3">
+            qo'shimcha qulayliklar
+            <div class="row">
+                <div class="col-lg-4 col-md-6 pb-1">
+                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
+                        <i class="flaticon-050-fence h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>O'yin maydonchasi</h4>
+                            <p class="m-0">Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pb-1">
+                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
+                        <i class="flaticon-022-drum h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>Musiqa va raqs</h4>
+                            <p class="m-0">Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pb-1">
+                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
+                        <i class="flaticon-030-crayons h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>San'at va hunarmandchilik</h4>
+                            <p class="m-0">Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pb-1">
+                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
+                        <i class="flaticon-017-toy-car h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>Xavfsiz olib kelish va olib borish</h4>
+                            <p class="m-0">Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pb-1">
+                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
+                        <i class="flaticon-025-sandwich h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>Sog'lom taomnoma</h4>
+                            <p class="m-0">Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pb-1">
+                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
+                        <i class="flaticon-047-backpack h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>Ta'lim sarguzashtlari</h4>
+                            <p class="m-0">Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facilities Start -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <img class="img-fluid rounded mb-5 mb-lg-0" src="{% static 'img/about_main_XL1.jpg' %}" alt="">
+                </div>
+                <div class="col-lg-7">
+                    <p class="section-title pr-5"><span class="pr-2">Biz haqimizda bilib oling</span></p>
+                    <h1 class="mb-4">{{ banner.about_title }}</h1>
+                    <p>{{ banner.header_description |safe  }}</p>
+                    <div class="row pt-2 pb-4">
+                        <div class="col-6 col-md-4">
+                            <img class="img-fluid rounded" src="{% static 'img/1bola.jpg' %}" alt="">
+                        </div>
+                        <div class="col-6 col-md-8">
+                            <ul class="list-inline m-0">
+                                <li class="py-2 border-top border-bottom"><i class="fa fa-check text-primary mr-3"></i>Labore eos amet dolor amet diam</li>
+                                <li class="py-2 border-bottom"><i class="fa fa-check text-primary mr-3"></i>Etsea et sit dolor amet ipsum</li>
+                                <li class="py-2 border-bottom"><i class="fa fa-check text-primary mr-3"></i>Diam dolor diam elitripsum vero.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="{% url 'about' %}" class="btn btn-primary mt-2 py-2 px-4">Batafsil...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+{% include 'details/class_reg.html' %}
+
+    <!-- Team Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="text-center pb-2">
+                <p class="section-title px-5"><span class="px-2">Bizning tarbiyachilarimiz</span></p>
+                <h1 class="mb-4">Murabbiylar bilan tanishing</h1>
+            </div>
+            <div class="row">
+                {% for teacher in teachers %}
+                <div class="col-md-6 col-lg-3 text-center team mb-5">
+                    <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
+                        <img class="img-fluid w-100" src="{{ teacher.photo.url }}" alt="{{ teacher.name }}" >
+                        <div
+                            class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
+                                href="#"><i class="fab fa-telegram-plane"></i></a>
+                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
+                                href="#"><i class="fa fa-phone"></i></a>
+                            <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;"
+                                href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <h4>{{ teacher.name }}</h4>
+                    <p>{{ teacher.age }} yosh | {{ teacher.work_time }} <br>
+                        <i>{{ teacher.job_name }}</i></p>
+                </div>
+                {% endfor %}
+
+                
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5">
+        <div class="container p-0">
+            <div class="text-center pb-2">
+                <p class="section-title px-5"><span class="px-2">Izohlar</span></p>
+                <h1 class="mb-4">Maktabgacha ta'lim tashkilotimiz haqidagi qaynoq fikrlar!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel">
+                {% for izoh in izohlar %}
+                <div class="testimonial-item px-3">
+                    <div class="bg-light shadow-sm rounded mb-4 p-4">
+                        <h3 class="fas fa-quote-left text-primary mr-3"></h3>
+                        {{ izoh.description|safe }}
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img class="rounded-circle" src="{{ izoh.photo.url }}" style="width: 70px; height: 70px;" alt="{{ izoh.name }}">
+                        <div class="pl-3">
+                            <h5>{{ izoh.name }}</h5>
+                            <i>{{ izoh.job }}</i>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    <!-- Blog Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="text-center pb-2">
+                <p class="section-title px-5"><span class="px-2">Yangiliklar</span></p>
+                <h1 class="mb-4">Eng so'nggi yangilikar</h1>
+            </div>
+            <div class="row pb-3">
+                {% for article in articles %}
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm mb-2">
+                        <a href="{% url 'article_detail' article.pk %}">
+                        <img class="card-img-top mb-2" src="{{ article.photo.url }}" alt="{{ article.title }}">
+                        <div class="card-body bg-light text-center p-4">
+                            <h4 class="">{{ article.title }}</h4>
+                        </a>
+
+                            <div class="d-flex justify-content-center mb-3 ">
+                                <small class="mr-3"><i class="far fa-calendar-alt"></i> {{ article.date }}</small>
+                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Category</small>
+                            </div>
+                            <p class="ml-5"> {{article.subtitle|safe }} </p>
+                            <a href="{% url 'article_detail' article.pk %}" class="btn btn-primary px-4 mx-auto my-2">Batafsil...</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+
+
+    {% endblock content %}

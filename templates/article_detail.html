@@ -1,0 +1,73 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block activ_title %}
+<a href="{% url 'home' %}" class="nav-item nav-link ">Asosiy</a>
+<a href="{% url 'about' %}" class="nav-item nav-link ">Biz haqimizda</a>
+<a href="{% url 'class' %}" class="nav-item nav-link ">Guruhlar</a>
+<a href="{% url 'team' %}" class="nav-item nav-link ">Bizning jamoa</a>
+<a href="{% url 'galery' %}" class="nav-item nav-link ">Rasmlar</a>
+<a href="{% url 'article' %}" class="nav-item nav-link active" >Yangiliklar</a>
+<a href="{% url 'contact' %}" class="nav-item nav-link">Aloqa</a>
+{% endblock activ_title %}
+
+{% block content %}
+
+
+
+    <!-- Detail Start -->
+    <div class="container py-5">
+        <div class="row pt-5">
+            <div class="col-lg-12">
+                <div class="d-flex flex-column text-left mb-3">
+                    <p class="section-title pr-5"><span class="pr-2">Blog Detail Page</span></p>
+                    <h1 class="mb-3">{{ article.title }}</h1>
+                    <div class="d-flex">
+                        <p class="mr-3"><i class="far fa-calendar-alt"></i> {{ article.date }}</p>
+                    </div>
+                </div>
+                <div class="mb-5"  style="font-size: 20px">
+                    <img class="img-fluid rounded w-100 mb-4" src="{{ article.photo.url }}" alt="{{ article.title }}">
+                   <i> {{ article.subtitle|safe }}
+                   </i>   
+                    <hr> 
+                    <p>
+                    {{ article.desc|safe }}    
+                    </p>
+                </div>
+
+                <!-- Related Post -->
+                <div class="mb-5 mx-n3">
+                    <h2 class="mb-4 ml-3">So'nggi yangiliklar</h2>
+                    <div class="owl-carousel post-carousel position-relative">
+                        {% for l_article in last_articles %}
+                            <a href="{% url 'article_detail' l_article.pk %}">
+                                <div class="d-flex align-items-center bg-light shadow-sm rounded overflow-hidden mx-3">
+
+                                    <img class="img-fluid accent-cyan" src="{{ l_article.photo.url }}" style="width: 80px; height: 80px;">
+                                    <div class="pl-3">
+                                        <h5 class="">{{ l_article.title }}</h5>
+                                        <div class="d-flex">
+                                            <small class="mr-3"><i class="far fa-calendar-alt"></i> {{ article.date }}</small>
+                                            <small class="mr-3"><i class="fa fa-folder text-primary"></i>Category</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                        {% endfor %}
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- Detail End -->
+
+
+    
+    {% endblock content %}

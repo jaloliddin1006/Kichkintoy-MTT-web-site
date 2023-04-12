@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block activ_title %}
+<a href="{% url 'home' %}" class="nav-item nav-link ">Asosiy</a>
+<a href="{% url 'about' %}" class="nav-item nav-link ">Biz haqimizda</a>
+<a href="{% url 'class' %}" class="nav-item nav-link active">Guruhlar</a>
+<a href="{% url 'team' %}" class="nav-item nav-link ">Bizning jamoa</a>
+<a href="{% url 'galery' %}" class="nav-item nav-link ">Rasmlar</a>
+<a href="{% url 'article' %}" class="nav-item nav-link " >Yangiliklar</a>
+
+<a href="{% url 'contact' %}" class="nav-item nav-link">Aloqa</a>
+{% endblock activ_title %}
+
+{% block content %}
+
+
+<div class="text-center pb-2">
+
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success" id="showmessages">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+</div>
+
+
+    {% include 'details/class_reg.html' %}
+
+    <script>
+        window.setTimeout(function() {
+            var messages = document.getElementById("showmessages");
+            if (messages) {
+              messages.style.display = "none";
+            }
+          }, 3000);
+      </script>
+
+    {% endblock content %}

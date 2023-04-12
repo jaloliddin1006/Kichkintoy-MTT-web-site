@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Login Page</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <a href="{% url 'login' %}" class="btn-danger">Login</a>
+    {% comment %} <button type="submit" url>Login</button> {% endcomment %}
+  </form>
+{% endblock %}

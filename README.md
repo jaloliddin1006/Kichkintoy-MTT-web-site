@@ -5,3 +5,7 @@ FrontEnd tayyor web shablondan dan foydalanilgan
 
 
 Loyihani ishlatib korish uchun birinchi navbatda kerakli kutubxonalarni o'rnatib olish kerak, Kerakli kutubxonalar barchasi requirement.txt faylida joylashgan.
+
+  
+  
+  pip install requirements.txt

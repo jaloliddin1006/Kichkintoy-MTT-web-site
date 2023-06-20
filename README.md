@@ -12,4 +12,4 @@ Loyihani ishlatib korish uchun birinchi navbatda kerakli kutubxonalarni o'rnatib
       pip install requirements.txt
 
 
-hozircha bu shunchaki tayyorlanib qo'yilgan web sayt
+
